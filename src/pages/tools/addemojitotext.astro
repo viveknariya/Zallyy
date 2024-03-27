@@ -1,0 +1,34 @@
+---
+import { PalmComponent }  from "../../components/palm.compoenent"
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Automatically Add Emoji to Text AI | Enhance Your Messages with Emoji AI</title>
+		<meta name="description" content="Discover how our AI-powered tool automatically adds emojis to your text, making your messages more engaging and expressive. Try our emoji AI today for fun and creative communication!">
+	</head>
+	<body>
+		<section class="bg-gray-50">
+			<div class="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
+			  <div class="mx-auto max-w-xl text-center">
+				<h1 class="text-3xl font-extrabold sm:text-5xl">
+					Add Emoji to Text
+				  <strong class="font-extrabold text-red-700 sm:block"> Increase Conversion. </strong>
+				</h1>
+		  
+				<p class="mt-4 sm:text-xl/relaxed">
+					Make your text messages or social media post more interesting with AI Emojis. An automated tool that adds relevant emojis to your text with just a click. Keep up with the latest emoji trends and make your messages stand out. Try it now!
+				</p>
+		  
+				<div class="mt-4">
+					<PalmComponent client:load/>
+				</div>
+			  </div>
+			</div>
+		  </section>
+	</body>
+</html>
