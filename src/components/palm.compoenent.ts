@@ -1,5 +1,5 @@
-import { Component} from '@angular/core'
-import { HttpClient, HttpClientModule } from '@angular/common/http'
+import { Component, inject} from '@angular/core'
+import { HttpClient, provideHttpClient } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 
 
@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
     selector:'PalmComponent',
     standalone:true,
-    imports:[HttpClientModule,FormsModule],
+    imports:[FormsModule],
     template:`
     <!--
   Heads up! 👋
@@ -53,9 +53,10 @@ export class PalmComponent{
     response!:string;
     inputText!: string;
 
-    constructor(private http:HttpClient){
+    static clientProviders = [provideHttpClient()];
+    static renderProviders = [PalmComponent.clientProviders];
 
-    }
+    http = inject(HttpClient);
     genrate(){
         let payload = {
             "text" : this.inputText
