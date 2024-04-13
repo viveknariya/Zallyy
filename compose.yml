@@ -1,0 +1,25 @@
+version: "4"
+
+networks:
+  my-private-net-astro:
+    ipam:
+      config:
+        - subnet: 11.0.0.0/16
+
+services:
+  web:
+    build: .
+    ports:
+      - "4321:4321"
+      - "3000:3000"
+    volumes:
+      # mount local source into container
+      - "./:/app"
+      # paths below are ephemeral volumes
+      - "/app/.tscache"
+      - "/app/dist"
+      - "/app/node_modules"
+    networks:
+      my-private-net-astro:
+        ipv4_address: 11.0.0.2
+      

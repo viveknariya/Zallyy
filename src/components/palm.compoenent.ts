@@ -61,7 +61,7 @@ export class PalmComponent{
         let payload = {
             "text" : this.inputText
         }
-        this.http.post('http://13.234.119.0:8000/genai',payload).subscribe({
+        this.http.post('https://www.zallyy.com/genai',payload).subscribe({
             next:(nxt:any)=>{
                 this.response = nxt.completion.result;
                 console.log(nxt)
