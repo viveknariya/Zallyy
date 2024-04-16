@@ -1,0 +1,94 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn how to serve an Angular application with Nginx on a Windows operating system. Nginx is a powerful web server that can also act as a reverse proxy and load balancer.">
+    <title>Serving an Angular Application with Nginx on Windows</title>
+    <link rel="canonical" href="https://yourwebsite.com/serving-angular-app-nginx-windows">
+</head>
+<body>
+    <article>
+        <header>
+            <h1>How to Serve an Angular App with Nginx in Windows</h1>
+            <p><time datetime="2024-04-16">April 16, 2024</time></p>
+        </header>
+        <section>
+            <p>In this tutorial, we'll guide you through the process of serving an Angular application using Nginx on a Windows operating system. Nginx is a powerful web server that can also act as a reverse proxy and load balancer.</p>
+        </section>
+        <section>
+            <h2>Installing Nginx on Windows</h2>
+            <ol>
+                <li>Download the latest version of Nginx for Windows from the <a href="https://nginx.org/en/download.html">official Nginx website</a>.</li>
+                <li>Extract the downloaded archive to a directory of your choice, such as <code>C:\nginx</code>.</li>
+            </ol>
+        </section>
+        <section>
+            <h2>Basic Nginx Commands</h2>
+            <p>Once Nginx is installed, you can use the following basic commands to manage the Nginx server:</p>
+            <ul>
+                <li>To start Nginx: Open Command Prompt and navigate to the Nginx directory (<code>cd C:\nginx</code>) and then run <code>nginx.exe</code>.</li>
+                <li>To stop Nginx: Use the command <code>nginx.exe -s stop</code>.</li>
+                <li>To reload Nginx configuration: Use the command <code>nginx.exe -s reload</code>.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>nginx.conf Configuration</h2>
+            <p>Next, let's configure Nginx to serve our Angular application. Below is a basic configuration file (<code>nginx.conf</code>) for serving an Angular app:</p>
+            <pre>
+                <code>
+                http { '{' }
+                        include mime.types;
+
+                        server { '{'}
+                            listen 2292;
+                            root /Users/vivek/Desktop/SAAS/saas_client/dist/sfms/browser;
+                        { '}' }
+                    { '}' }
+
+                events {}
+                </code>
+        </pre>
+            <h3>Explanation of Configuration</h3>
+            <p>The provided Nginx configuration file consists of the following directives:</p>
+            <ul>
+                <li><code>http:</code>: This directive marks the beginning of the HTTP block, which defines global settings for Nginx.</li>
+                <li><code>include mime.types;</code>: This directive includes the <code>mime.types</code> file, which maps file extensions to their corresponding MIME types.</li>
+                <li><code>server:</code>: This directive defines a server block within the HTTP block. A server block defines how Nginx handles requests for a specific domain name or port.</li>
+                <ul>
+                    <li><code>listen 2292;</code>: This directive specifies the port (2292) on which Nginx should listen for incoming connections.</li>
+                    <li><code>root /Users/vivek/Desktop/SAAS/saas_client/dist/sfms/browser;</code>: This directive sets the root directory from which Nginx should serve static files. In this case, the Angular application's built output is located in the specified directory.</li>
+                </ul>
+            </ul>
+        </section>
+        <section>
+            <h2>Replacing Default nginx.conf</h2>
+            <p>To use the above configuration, follow these steps:</p>
+            <ol>
+                <li>Locate the default <code>nginx.conf</code> file in the Nginx installation directory (typically <code>C:\nginx\conf</code> on Windows).</li>
+                <li>Replace the contents of the default <code>nginx.conf</code> file with the configuration provided above.</li>
+                <li>Save the changes to the <code>nginx.conf</code> file.</li>
+            </ol>
+        </section>
+        <section>
+            <h2>Clearing Cache</h2>
+            <p>After making changes to the Nginx configuration, it's important to clear the cache to ensure that the new configuration takes effect. The specific method for clearing the cache depends on your application setup.</p>
+            <p>Here are two common approaches:</p>
+            <ol>
+                <li><strong>Restart Nginx:</strong> This is the most straightforward way to clear the cache. You can typically restart Nginx from the Windows service manager.</li>
+                <li><strong>Use cache clearing commands:</strong> Some Nginx modules or caching applications might provide specific commands to clear the cache. Refer to the documentation for your caching solution for detailed instructions.</li>
+            </ol>
+        </section>
+        <section>
+            <h2>Conclusion</h2>
+            <p>By following these steps, you should be able to successfully serve your Angular application using Nginx on a Windows system. Nginx offers a reliable and efficient way to host web applications, improving performance and scalability.</p>
+        </section>
+        <footer>
+            <p>For a visual demonstration of setting up Nginx on Windows, you can refer to the following video tutorial: <a href="https://www.youtube.com/watch?v=Wf-6idVVis4">link to video</a>.</p>
+        </footer>
+    </article>
+</body>
+</html>
