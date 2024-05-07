@@ -1,6 +1,7 @@
 ---
 import Banner from "../astro-components/Banner.astro";
 import Grid1 from "../astro-components/Grid1.astro";
+import Grid2 from "../astro-components/Grid2.astro";
 import Headers from "../astro-components/Headers.astro";
 ---
 
@@ -15,6 +16,17 @@ import Headers from "../astro-components/Headers.astro";
   <body>
     <Headers />
     <Banner />
+    <span class="flex items-center bg-gray-50">
+      <span class="h-px flex-1 bg-black"></span>
+      <span class="shrink-0 p-10 text-3xl">Services</span>
+      <span class="h-px flex-1 bg-black"></span>
+    </span>
+    <Grid2 />
+    <span class="flex items-center">
+      <span class="h-px flex-1 bg-black"></span>
+      <span class="shrink-0 p-10 text-3xl">Custom Projects</span>
+      <span class="h-px flex-1 bg-black"></span>
+    </span>
     <Grid1 />
   </body>
 </html>
