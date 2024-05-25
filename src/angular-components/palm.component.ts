@@ -110,14 +110,10 @@ export class PalmComponent implements OnInit {
 
   setCurrentClasses() {
     this.currentClassesGenButton = {
-      "bg-gray-400": this.disableGenBtn,
-      "bg-indigo-600": !this.disableGenBtn,
-      "hover:bg-indigo-700": !this.disableGenBtn,
+      "bg-gray-400": this.disableGenBtn,"bg-indigo-600": !this.disableGenBtn,"hover:bg-indigo-700": !this.disableGenBtn,
     };
     this.currentClassesCopyButton = {
-      "bg-gray-400": this.disableCopyBtn,
-      "bg-indigo-600": !this.disableCopyBtn,
-      "hover:bg-indigo-700": !this.disableCopyBtn,
+      "bg-gray-400": this.disableCopyBtn,"bg-indigo-600": !this.disableCopyBtn,"hover:bg-indigo-700": !this.disableCopyBtn,
     };
   }
 }
